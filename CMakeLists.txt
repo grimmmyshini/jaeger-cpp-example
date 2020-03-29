@@ -300,8 +300,10 @@ configure_file(
   @ONLY)
 
 if(JAEGERTRACING_BUILD_EXAMPLES)
-  add_executable(app examples/App.cpp)
-  target_link_libraries(app PUBLIC ${JAEGERTRACING_LIB})
+  add_executable(Publisher examples/Publisher.cpp)
+  target_link_libraries(Publisher PUBLIC ${JAEGERTRACING_LIB})
+  add_executable(Subscriber examples/Subscriber.cpp)
+  target_link_libraries(Subscriber PUBLIC ${JAEGERTRACING_LIB})
 endif()
 
 if(BUILD_TESTING)
